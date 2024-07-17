@@ -1,0 +1,330 @@
+
+body{
+    background-image: linear-gradient(160deg, #074b49 0%,#0c88a3  100%);;    
+    background-repeat: no-repeat;
+   background-attachment: fixed; 
+} 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+    /* background-image: linear-gradient(160deg, #074b49 0%,#0c88a3  100%);;    */
+}
+:root{
+    --colorDark1:#112D4E;
+    --colorDark2:#3F72AF;
+    --colorLight2:#DBE2EF;
+    --colorLight1:#F9F7F7;
+
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    color: var(--colorLight2);
+    /* background-image: linear-gradient(160deg, #0a5452 0%,#31aac5  100%);; */
+   /* background-image: linear-gradient(160deg, #074b49 0%,#0c88a3  100%);;  */
+} 
+h1{
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1%;
+}
+
+.tab-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 3%;
+    
+}
+.tab{
+    cursor: pointer;
+    font-size: 100%;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
+    
+}
+
+.tab.current-tab{
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+}
+.weather-container{
+    /* width: 50%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+    /* margin-block: 2rem; */
+}
+.btn{
+    all: unset;
+    background-color:var(--colorDark2) ;
+    font-size: 90%;
+    text-transform: uppercase;
+    padding:3% 5%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5%;
+    color: var(--colorLight1);
+
+}
+.grant-location-container{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+
+}
+.grant-location-container.active{
+    display: flex;
+}
+.grant-location-container img{
+    margin-bottom: 10%;
+}
+.grant-location-container p:first-of-type{
+    font-size: 200%;
+    font-weight: 600;
+}
+.grant-location-container p:last-of-type{
+    font-size: 110%;
+    font-weight: 500;
+    margin-top: 3%;
+    margin-bottom: 7%;
+    letter-spacing: 0.75px;
+}
+
+.loading-container{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+.loading-container.active{
+    display: flex;
+}
+.loading-container p{
+ text-transform: uppercase;
+}
+
+.user-info-container{
+    display: none;
+    /* justify-content: center;
+    align-items: center;
+    justify-content: space-evenly; */
+
+}
+.user-info-container.active{
+    display: contents;
+}
+.name{
+    display: flex;
+    gap: 0% 5%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1%;
+
+}
+
+.user-info-container img{
+    width: 6%;
+}
+ .user-info-container p{
+    font-size: 150%;
+    font-weight: 200;
+}
+
+  
+.name p{ 
+    font-size: 200%;
+}  
+.name img{
+    width: 15%;
+}
+   
+.user-info-container p[data-temp]{
+    font-size: 250%;
+    font-weight: 700;
+}
+.parameter-container{
+    width:90%;
+    display: flex;
+    gap: 10% 3%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.parameter{
+     width:35%;
+    max-width:200px; 
+    background-color: rgba(219, 226, 239, 0.5);;
+    border-radius: 5px;
+    padding:1rem;
+    display: flex;
+    flex-direction: column;  
+    gap:5px 0;
+    justify-content: space-between;
+    align-items: center; 
+   
+}   
+
+.parameter img{
+    width:50px;
+    height:50px;
+}
+
+.parameter p:first-of-type{
+    font-size: 1.15rem;
+    font-weight:600;
+    text-transform: uppercase;
+}
+
+.parameter p:last-of-type{
+    font-size: 1rem;
+    font-weight: 200;
+}
+.parameter p{
+    font-weight: 700;
+}
+
+ /* .parameter-container{
+    width: 90%;
+  display: flex;
+  justify-content: center;
+  gap: 10% 3%;
+  margin-top: 2%;
+  
+}
+
+.parameter{
+    text-align: center;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 5px;
+    padding: 0.8% 3%;
+    gap: 5px 0;
+}
+.parameter img{
+    width: 50%;
+    height: 50%;
+}
+     */
+ /* .parameter p{
+    font-size: 100%;
+    text-transform: uppercase;
+    font-weight: 600;
+  
+}    */
+.form-container{
+    display: none;
+    width:90%;
+    max-width:550px;
+    margin:0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px; 
+    margin-bottom: 3rem;
+}
+
+.form-container.active{
+    display: flex;
+}
+
+.form-container input{
+    all:unset;
+    width: calc(100% - 80px);
+    height:40px;
+    padding: 0 20px;
+    background-color:rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+}
+
+.form-container input::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-container input:focus{
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.form-container .btn {
+    padding:unset;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    margin-bottom:1px;
+
+}
+@media screen and (max-width:860px){
+    .tab-container{
+        width: 90%;
+        margin-top: 4%;
+        display: flex;
+        justify-content: space-around;
+  
+    }
+}
+@media screen and (max-width:660px) {
+    /* body{
+        background-image: linear-gradient(160deg, #074b49 0%,#0c88a3  100%);;   
+    } */
+  
+   h1{
+    padding-top: 20px;
+   }
+   .tab-container{
+      width: 90%;
+      margin-top: 4%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .name{
+        margin-top: 20px;
+    }
+    .user-info-container [data-weatherDesc]{
+        margin-top: 10px;
+    }
+    .user-info-container [data-weatherIcon]{
+        margin-top: 10px;
+        width: 20%;
+        height:20%;
+    }
+    .parameter-container{
+        margin-top: 10%;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .parameter{
+        /* background-color: rgba(219, 226, 239, 0.5);; */
+        width: 100%;
+        
+        max-width:250px; 
+    }
+     .parameter p{
+    font-size: 100%;
+    text-transform: uppercase;
+    font-weight: 700;
+    }   
+   .form-container{
+    margin-top: 5%;
+    width: 80%;
+  } 
+}
+
+
+/* .parameter p{
+    font-size: 100%;
+    text-transform: uppercase;
+    font-weight: 700;
+  /* }    */
+
+/* .name{
+        margin-top: 20px;
+    } */
